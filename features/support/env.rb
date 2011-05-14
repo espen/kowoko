@@ -37,3 +37,15 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
+require "#{Rails.root}/spec/factories"
+
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:twitter, {
+  :uid => '12345',
+  :nickname => 'fooman',
+  :user_info => {
+    :first_name => 'Foo',
+    :last_name => 'Man'
+  }
+})

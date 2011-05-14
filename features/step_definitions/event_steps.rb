@@ -12,3 +12,13 @@ end
 Then /^I should see the following events:$/ do |expected_events_table|
   expected_events_table.diff!(tableish('table tr', 'td,th'))
 end
+
+Given /^I am signed in with provider "([^"]*)"$/ do |provider|
+  visit "/auth/#{provider.downcase}"
+end
+
+Given /^the following users:$/ do |table|
+      table.hashes.each do |attributes|
+        Factory.create(:user, attributes)
+    end
+end

@@ -12,8 +12,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    logger.info "CREATE"
     @event = Event.create( params[:event])
+    @event.user_id = session[:user_id]
+    @event.save
     redirect_to @event
   end
   
