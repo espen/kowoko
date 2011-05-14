@@ -1,0 +1,157 @@
+body {
+	background: #f1f1f1 url(../images/background-texture-08.gif);
+}
+
+.container {
+	width: 710px;
+	background: transparent;
+	margin-top: 50px;
+}
+#wrapper .container {
+	width: 640px;
+	background: #fff;
+	margin-top: 20px;
+	padding: 10px 30px;
+	margin-bottom: 100px;
+	padding-bottom: 30px;
+	border:1px solid #ccc
+}
+
+#wrapper {
+}
+
+a#logo {
+	display: block;
+	background: transparent url(../images/logo.png) no-repeat bottom left;
+	text-indent: -9999px;
+	height: 80px;
+}
+
+#wrapper p.tagline {
+	margin-top: 10px;
+	font-size:22px;
+	color: #555;
+	margin-bottom: 10px;
+
+}
+
+#wrapper a {
+	font-size: 18px;
+	color: #557BAD;
+}
+
+#wrapper p.tagline input {
+	width: 300px;
+	height: 30px;
+	margin-left: 10px;
+	font-size: 25px;
+	padding: 5px 0;
+	border: 1px solid #666;
+	color: #666;
+}
+
+.buttonblock {
+display: block;
+border: 1px solid #999;
+height: 30px;
+border-color: #ccc #999 #999 #ccc;
+}
+
+.button {
+background: url(../images/gradient.png) repeat-x;
+width: 148px; /*Here we have -2 pixels, because of the margins wich are 1 pixel on each side*/
+font: 22px arial,sans-serif;
+color: #333;
+cursor: pointer;
+height: 30px;
+margin: 0;
+outline: 0;
+border: 0;
+}
+
+.inline{
+width: 150px;
+display: inline-block; 
+float: right;
+}
+
+.button:active {
+background: #ccc;
+}
+
+/* Event Listing */
+ul#events {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#events li {
+	height: 85px;
+	font-size: 16px;
+	border-bottom: 1px solid #ccc;
+	margin-top: 10px;
+}
+
+ul#events span.venue {
+	color: #666;
+}
+
+ul#events span.attendees img{
+	margin-top: 8px;
+}
+
+ul#events a.button2 {
+	float: right;
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 16px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+
+
+.published {
+	display:block; 
+	margin-right: 20px;
+	text-align: center;
+	float:left; 
+	font-family: Arial, Helvetica, sans-serif;
+	border-bottom:none;
+	background:url(../images/clip-bottom.png) 
+		right bottom no-repeat;
+	width:2.2em;
+}
+.pub-month {
+	display:block;
+	font-size: .9em;
+	line-height: 1em;
+	margin:0; 
+	padding:0;
+	padding-top:18px;
+	background:url(../images/clip-top.png) 
+		center top repeat-x;
+}
+.pub-date { 
+	display:block; 
+	font-size:1.5em;
+	margin:0; 
+	padding:0;
+}
+

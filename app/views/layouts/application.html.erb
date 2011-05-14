@@ -7,8 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <a id="logo" href="/">Kowoko</a>
+  </div>
+  <div id="wrapper">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
