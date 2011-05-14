@@ -1,11 +1,17 @@
-<%= @event.starts_at %>
-
-<%= link_to "Attend", event_attend_path( @event )%>
-
-<% if @event.attendees.any? %>
-<ul>
-<% for attendent in @event.attendees %>
-<li><%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.user.nickname}.json?size=bigger" %> <%= attendent.user.name %></li>
-<% end %>
-</ul>
-<% end %>
+<h2><%= @event.starts_at %></h2>
+<p><%= @event.description %></p>
+<div class="span-10">
+  <h3>Who&rsquo;s coming?</h3>
+  <% if @event.attendees.any? %>
+    <% for attendent in @event.attendees %>
+      <span class="attendees">
+		<%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.user.nickname}.json?size=bigger" %>
+		<br>
+		<%= attendent.user.name %>
+	  </span>
+    <% end %>
+  <% end %>
+</div>
+<div class="span-6">
+  <%= link_to "I'm joining!", event_attend_path( @event ), :class=>"button2 big"%>
+</div>

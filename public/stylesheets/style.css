@@ -1,4 +1,7 @@
-/* @override http://kowoko.dev/stylesheets/style.css?1305380020 */
+/* @override 
+	http://kowoko.dev/stylesheets/style.css?1305380020
+	http://kowoko.dev/stylesheets/style.css?1305392694
+*/
 
 body {
 	background: #f1f1f1 url(../images/background-texture-08.gif);
@@ -23,7 +26,7 @@ body {
 	font-size: 30px;
 	font-weight: bolder;
 	margin: 20px 0;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 a#logo {
@@ -39,6 +42,11 @@ a#logo {
 	color: #555;
 	margin-bottom: 10px;
 
+}
+
+#wrapper p {
+	font-size:16px;
+	color: #555;
 }
 
 #wrapper a {
@@ -108,7 +116,7 @@ ul#events span.attendees img{
 	margin-top: 8px;
 }
 
-ul#events a.button2 {
+a.button2 {
 	float: right;
 	display: inline-block;
 	outline: none;
@@ -125,7 +133,7 @@ ul#events a.button2 {
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	color: #fef4e9;
+	color: #fff !important;
 	border: solid 1px #da7c0c;
 	background: #f78d1d;
 	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
@@ -163,7 +171,7 @@ ul#events a.button2 {
 }
 
 #wrapper .container form#new_event {
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
 #wrapper .container form#new_event p label {
@@ -193,17 +201,30 @@ ul#events a.button2 {
 #wrapper .container form#new_event span.inline {
 	float: left;
 	margin-left: 150px;
-	margin-top: -10px;
 }
 
 #wrapper .container form#new_event p input.button {
 	width: 148px;
 	border:none;
-	font: 18px arial,sans-serif;
+	font: 19px arial,sans-serif;
 	margin: 0;
 	outline: 0;
 	border: 0;
-	margin-top: -4px;
-	
-
+	margin-top: -5px;
 }
+
+#wrapper .container h3 {
+	font-size: 22px;
+	color: #3333;
+	margin-bottom: 17px;
+	font-weight: bold;
+}
+
+a.button2.big {
+	margin-top: 40px;
+	font-size: 40px !important;
+	padding: 29px 5px;
+	width: 250px;
+	height: 44px;
+}
+
