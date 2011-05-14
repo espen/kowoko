@@ -5,7 +5,7 @@
 <% if @event.attendees.any? %>
 <ul>
 <% for attendent in @event.attendees %>
-<li><%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.user.nickname}.json?size=normal" %> <%= attendent.user.name %></li>
+<li><%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.user.nickname}.json?size=bigger" %> <%= attendent.user.name %></li>
 <% end %>
 </ul>
 <% end %>
