@@ -1,9 +1,3 @@
-<form action="result.html">
-<p class="tagline">Find me a co-working session at <input type="text"></input></p>
-<span class="inline">
-  <span class="buttonblock">
-    <input type="submit" value="Search" class="button">
-  </span>
-</span>
-</form>
-<%= link_to "Looking to organize one?", new_event_path %>
+<% for event in @events %>
+<%= link_to event.starts_at, event %>
+<% end %>

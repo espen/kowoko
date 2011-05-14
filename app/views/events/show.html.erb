@@ -1,1 +1,11 @@
 <%= @event.starts_at %>
+
+<%= link_to "Attend", event_attend_path( @event )%>
+
+<% if @event.attendees.any? %>
+<ul>
+<% for attendent in @event.attendees %>
+<li><%= attendent.user.name %></li>
+<% end %>
+</ul>
+<% end %>

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
   
   def login_required
+    session[:return_to] = request.fullpath
     redirect_to "/auth/twitter" if !current_user
   end
 
