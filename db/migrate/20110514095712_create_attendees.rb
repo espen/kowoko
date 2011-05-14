@@ -1,8 +1,8 @@
 class CreateAttendees < ActiveRecord::Migration
   def self.up
     create_table :attendees, :id => false do |t|
-      t.references :users
-      t.references :events
+      t.references :user
+      t.references :event
 
       t.timestamps
     end

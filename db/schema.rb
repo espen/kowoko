@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(:version => 20110514104606) do
 
   create_table "attendees", :id => false, :force => true do |t|
-    t.integer  "users_id"
-    t.integer  "events_id"
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

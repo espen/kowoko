@@ -4,6 +4,6 @@ class AddUserIdToEvent < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :events, :user
+    remove_column :events, :user_id
   end
 end
