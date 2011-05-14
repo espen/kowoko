@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   respond_to :html, :xml, :json
   
+  before_filter :login_required, :only => [:new, :create, :destroy]
+  
   def index
     @events = Event.limit(20)
     respond_with @events
