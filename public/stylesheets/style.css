@@ -1,3 +1,5 @@
+/* @override http://kowoko.dev/stylesheets/style.css?1305380020 */
+
 body {
 	background: #f1f1f1 url(../images/background-texture-08.gif);
 }
@@ -17,7 +19,11 @@ body {
 	border:1px solid #ccc
 }
 
-#wrapper {
+#wrapper h2 {
+	font-size: 30px;
+	font-weight: bolder;
+	margin: 20px 0;
+	margin-bottom: 30px;
 }
 
 a#logo {
@@ -67,6 +73,7 @@ height: 30px;
 margin: 0;
 outline: 0;
 border: 0;
+margin-top: -5px;
 }
 
 .inline{
@@ -155,3 +162,48 @@ ul#events a.button2 {
 	padding:0;
 }
 
+#wrapper .container form#new_event {
+	margin-top: 20px;
+}
+
+#wrapper .container form#new_event p label {
+	width: 150px;
+	float: left;
+	font-size: 22px;
+	color: #666;
+	margin-top: 10px;
+}
+
+#wrapper .container form#new_event p input {
+	width: 300px;
+	height: 30px;
+	margin: 0;
+	font-size: 25px;
+	padding: 5px 0;
+	border: 1px solid #666;
+	color: #666;
+}
+
+#wrapper .container form#new_event p textarea {
+	height: 70px;
+	font-size: 25px;
+	margin: 0;
+}
+
+#wrapper .container form#new_event span.inline {
+	float: left;
+	margin-left: 150px;
+	margin-top: -10px;
+}
+
+#wrapper .container form#new_event p input.button {
+	width: 148px;
+	border:none;
+	font: 18px arial,sans-serif;
+	margin: 0;
+	outline: 0;
+	border: 0;
+	margin-top: -4px;
+	
+
+}
