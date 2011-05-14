@@ -1,1 +1,14 @@
-NEW EVENT
+<% form_for @event do |f| %>
+
+<%= f.label :starts_at %>
+<%= f.text_field :starts_at %>
+
+<%= f.label :duration %>
+<%= f.text_field :duration %>
+
+<%= f.label :description %>
+<%= f.text_area :description %>
+
+<%= f.submit "Create" %>
+
+<% end %>
