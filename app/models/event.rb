@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   
   validates_presence_of :starts_at, :user_id
   
-  attr_accessor :duration
+  attr_accessor :duration, :city
   attr_accessible :starts_at, :ends_at, :description, :duration
   
   def duration=(val)

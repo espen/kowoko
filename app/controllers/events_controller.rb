@@ -20,7 +20,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create( params[:event])
-    @event.user_id = session[:user_id]
+    @event.user_id = @current_user.id
     @event.save
     respond_with @event
   end

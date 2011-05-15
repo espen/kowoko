@@ -13,5 +13,11 @@
   <% end %>
 </div>
 <div class="span-6">
-  <%= link_to "I'm joining!", event_attend_path( @event ), :class=>"button2 big"%>
+	<% if @current_user && @event.user_id == @current_user.id %>
+		<%= link_to "Your event!", event_attend_path( @event ), :class=>"button2 big"%>
+	<% elsif @current_user && @event.attenees.any? && @event.attenees.find_by_user_id(@current_user.id) %>
+		<%= link_to "I'm joining!", event_attend_path( @event ), :class=>"button2 big"%>
+	<% else %>
+		<%= link_to "You're going", event_attend_path( @event ), :class=>"button2 big"%>
+	<% end %>
 </div>
