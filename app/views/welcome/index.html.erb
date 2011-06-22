@@ -1,9 +1,9 @@
-<form action="result.html">
-<p class="tagline">Find me a co-working session at <input type="text"></input></p>
+<%= form_for :events, :method => :get do |f| %>
+<p class="tagline">Find me a co-working session at <%= f.text_field :city %></p>
 <span class="inline">
   <span class="buttonblock">
-    <input type="submit" value="Search" class="button">
+	<%= f.submit 'Search', { :class => 'button' } %>
   </span>
 </span>
-</form>
+<% end %>
 <%= link_to "Looking to organize one?", new_event_path %>
