@@ -5,9 +5,9 @@
   <% if @event.attendees.any? %>
     <% for attendent in @event.attendees %>
       <span class="attendees">
-		<%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.user.nickname}.json?size=bigger" %>
+		<%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger" %>
 		<br>
-		<%= attendent.user.name %>
+		<%= attendent.name %>
 	  </span>
     <% end %>
   <% end %>
