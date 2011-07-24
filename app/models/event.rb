@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   attr_accessible :starts_at_time, :starts_at_date, :city_name
 
   before_validation :set_starts_at, :set_city
+  after_create :set_creator_to_attend
   
   def duration=(val)
     self.ends_at = self.starts_at + "#{val}".to_i.hours
@@ -25,6 +26,10 @@ class Event < ActiveRecord::Base
   def set_starts_at
     return if self.starts_at?
     self.starts_at = self.starts_at_time + ' ' + self.starts_at_date
+  end
+  
+  def set_creator_to_attend
+    self.attendees << self.creator
   end
   
 end
