@@ -1,4 +1,7 @@
-/* @override http://localhost:3000/stylesheets/style.css?1311506427 */
+/* @override 
+	http://localhost:3000/stylesheets/style.css?1311506427
+	http://localhost:3000/stylesheets/style.css?1311506480
+*/
 
 body {
 	background: #f1f1f1 url(../images/background-texture-08.gif);
@@ -40,7 +43,7 @@ body {
 	margin-top:5px; 
 	float: left; 
 	margin-left: 72px;
-	width: 300px;
+	width: 200px;
 }
 
 #secondary .button:hover {
