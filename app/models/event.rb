@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :starts_at, :user_id, :city_id
   
   attr_accessor :city_name, :starts_at_date, :starts_at_time
-  attr_accessible :starts_at, :description
+  attr_accessible :starts_at, :description, :place
   attr_accessible :starts_at_time, :starts_at_date, :city_name
 
   before_validation :set_starts_at, :set_city

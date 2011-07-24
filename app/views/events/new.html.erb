@@ -5,6 +5,10 @@
 <%= f.text_field :city_name %>
 </p>
 <p>
+<%= f.label :place %>
+<%= f.text_field :place %>
+</p>
+<p>
 <%= f.label :starts_at %>
 <%= f.text_field :starts_at_time, {:value => Time.zone.now.strftime('%H:%M') } %>
 <%= f.text_field :starts_at_date, {:value => Time.zone.now.tomorrow.strftime('%d.%m.%Y') } %>

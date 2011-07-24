@@ -4,7 +4,7 @@ class EventsTest < ActiveSupport::TestCase
   self.use_instantiated_fixtures  = true
   
   test 'can save event' do
-    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week + 13.hours, :city_name => 'Kuala Lumpur' )
+    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week + 13.hours, :city_name => 'Kuala Lumpur', :place => 'The Dome, Pavillion' )
     e.creator = @espen
     assert e.save
   end
