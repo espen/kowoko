@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id'
   belongs_to :city
   
-  validates_presence_of :starts_at, :user_id
+  validates_presence_of :starts_at, :user_id, :city_id
   
   attr_accessor :city_name, :starts_at_date, :starts_at_time
   attr_accessible :starts_at, :description
@@ -14,17 +14,17 @@ class Event < ActiveRecord::Base
   after_create :set_creator_to_attend
   
   def duration=(val)
-    self.ends_at = self.starts_at + "#{val}".to_i.hours
+    self.ends_at = self.starts_at + '#{val}'.to_i.hours
   end
   
   protected
   
   def set_city
-    self.city = City.find_or_create_by_name( self.city_name )
+    self.city = City.find_or_create_by_name( self.city_name ) if !self.city && self.city_name
   end
   
   def set_starts_at
-    return if self.starts_at?
+    return if self.starts_at || (!self.starts_at_time || !self.starts_at_date)
     self.starts_at = self.starts_at_time + ' ' + self.starts_at_date
   end
   
