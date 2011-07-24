@@ -1,7 +1,4 @@
-/* @override 
-	http://kowoko.dev/stylesheets/style.css?1305380020
-	http://kowoko.dev/stylesheets/style.css?1305392694
-*/
+/* @override http://localhost:3000/stylesheets/style.css?1311506427 */
 
 body {
 	background: #f1f1f1 url(../images/background-texture-08.gif);
@@ -17,9 +14,56 @@ body {
 	background: #fff;
 	margin-top: 20px;
 	padding: 10px 30px;
-	margin-bottom: 100px;
 	padding-bottom: 30px;
-	border:1px solid #ccc
+	border:1px solid #ccc;
+	border-bottom: none
+}
+
+#secondary .container {
+	margin-top: 0;
+	background: #557bad;
+	width: 640px;
+	padding: 15px 30px;
+	margin-bottom: 100px;
+	border:1px solid #ccc;
+	border-top: none;  
+}
+
+#secondary h2 {
+	float: left;
+	color: #fff;
+	margin-bottom: 0;
+	font-size: 20px;
+}
+
+#secondary .buttonblock {
+	margin-top:5px; 
+	float: left; 
+	margin-left: 72px;
+	width: 300px;
+}
+
+#secondary .button:hover {
+	-moz-box-shadow: 0px 2px 4px #333;
+	-webkit-box-shadow: 0px 2px 4px #333;
+	box-shadow: 0px 2px 4px #333;
+}
+
+#secondary a.twitter {
+	float: left; 
+	background: url(../images/signin_twitter.png) no-repeat;
+	display: block;
+	text-indent: -9999px;
+	width: 150px;
+	height: 24px;
+}
+
+#secondary a.twitter:hover {
+	background-position: 0px -24px;
+}
+
+#secondary a.twitter:active {
+	background-position: 0px -48px;
 }
 
 #wrapper h2 {
@@ -34,6 +78,7 @@ a#logo {
 	background: transparent url(../images/logo.png) no-repeat bottom left;
 	text-indent: -9999px;
 	height: 80px;
+	margin-left: 5px;
 }
 
 #wrapper p.tagline {
@@ -49,6 +94,8 @@ a#logo {
 	color: #555;
 }
 
+
+
 #wrapper a {
 	font-size: 18px;
 	color: #557BAD;
@@ -56,34 +103,46 @@ a#logo {
 
 #wrapper p.tagline input {
 	width: 300px;
-	height: 30px;
+	height: 20px;
 	margin-left: 10px;
-	font-size: 25px;
+	font-size: 20px;
 	padding: 5px 0;
-	border: 1px solid #666;
+	border: 1px solid #ccc;
 	color: #666;
 }
 
 .buttonblock {
-display: block;
-border: 1px solid #999;
-height: 30px;
-border-color: #ccc #999 #999 #ccc;
+	float: right;
 }
 
+
 .button {
-background: url(../images/gradient.png) repeat-x;
-width: 148px; /*Here we have -2 pixels, because of the margins wich are 1 pixel on each side*/
-font: 22px arial,sans-serif;
-color: #333;
+background: #f1f1f1;
+border: 1px solid #dedede;
+width: 100px;
+font: 18px arial,sans-serif;
+color: #666;
+font-weight: bolder;
 cursor: pointer;
+padding:0;
 height: 30px;
 margin: 0;
 outline: 0;
-border: 0;
-margin-top: -5px;
 }
 
+a.button {
+	text-decoration: none; 
+	padding: 5px 15px;
+}
+
+.button:hover {
+	border: 1px solid #ccc;
+	background: #f6f6f6;
+	color: #333;
+	-moz-box-shadow: 0px 2px 4px #ccc;
+	-webkit-box-shadow: 0px 2px 4px #ccc;
+	box-shadow: 0px 2px 4px #ccc;
+}
 .inline{
 width: 150px;
 display: inline-block; 

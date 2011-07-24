@@ -5,5 +5,19 @@
 	<%= f.submit 'Search', { :class => 'button' } %>
   </span>
 </span>
+<%= link_to "See all available co-working sessions", events_path %>
 <% end %>
-<%= link_to "Looking to organize one?", new_event_path %>
+</div>
+</div>
+<div id="secondary">
+  <div class="container">
+    <h2>Organizing your own session?</h2>
+    <span class="buttonblock">
+    <% if @current_user %>
+      <%= link_to "Start a co-working session", new_event_path, { :class => 'button' } %>
+    <% else %>
+      <%= link_to "Start a co-working session", new_event_path, { :class => 'twitter' } %>
+    <% end %>
+    </span>
+  </div>
+</div>
