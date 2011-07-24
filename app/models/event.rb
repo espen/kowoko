@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-  has_many :attendees
-  has_many :users, :through => :attendees
+  has_many :event_attendees, :class_name => 'Attendee'
+  has_many :attendees, :through => :event_attendees, :source => :user
   belongs_to :creator, :class_name => "User", :foreign_key => "user_id"
   
   validates_presence_of :starts_at, :user_id
