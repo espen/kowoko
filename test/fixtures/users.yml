@@ -1,11 +1,4 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  provider: MyString
-  uid: MyString
-  name: MyString
-
-two:
-  provider: MyString
-  uid: MyString
-  name: MyString
+espen:
+  provider: Facebook
+  uid: 1
+  name: Espen Antonsen
