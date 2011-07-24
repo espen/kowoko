@@ -20,8 +20,9 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create( params[:event])
-    @event.user_id = @current_user.id
+    @event.creator = @current_user
     @event.save
+    logger.info @event.errors.inspect
     respond_with @event
   end
   
