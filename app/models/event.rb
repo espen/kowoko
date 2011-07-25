@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User', :foreign_key => 'user_id'
   belongs_to :city
   
-  validates_presence_of :starts_at, :user_id, :city_id
+  validates_presence_of :starts_at, :user_id, :city_id, :place
   
   attr_accessor :city_name, :starts_at_date, :starts_at_time
   attr_accessible :starts_at, :description, :place
