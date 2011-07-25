@@ -4,7 +4,7 @@
 */
 
 body {
-	background: #f1f1f1 url(../images/background-texture-08.gif);
+	background: #f1f1f1 url(/images/background-texture-08.gif);
 }
 
 .container {
@@ -54,7 +54,7 @@ body {
 
 #secondary a.twitter {
 	float: left; 
-	background: url(../images/signin_twitter.png) no-repeat;
+	background: url(/images/signin_twitter.png) no-repeat;
 	display: block;
 	text-indent: -9999px;
 	width: 150px;
@@ -78,7 +78,7 @@ body {
 
 a#logo {
 	display: block;
-	background: transparent url(../images/logo.png) no-repeat bottom left;
+	background: transparent url(/images/logo.png) no-repeat bottom left;
 	text-indent: -9999px;
 	height: 80px;
 	margin-left: 5px;
@@ -211,7 +211,7 @@ a.button2 {
 	float:left; 
 	font-family: Arial, Helvetica, sans-serif;
 	border-bottom:none;
-	background:url(../images/clip-bottom.png) 
+	background:url(/images/clip-bottom.png) 
 		right bottom no-repeat;
 	width:2.2em;
 }
@@ -222,7 +222,7 @@ a.button2 {
 	margin:0; 
 	padding:0;
 	padding-top:18px;
-	background:url(../images/clip-top.png) 
+	background:url(/images/clip-top.png) 
 		center top repeat-x;
 }
 .pub-date { 
