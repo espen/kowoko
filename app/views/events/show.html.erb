@@ -1,4 +1,4 @@
-<h2><%= @event.starts_at %></h2>
+<h2><%= localize( @event.starts_at, :format => :long_dayname ) %></h2>
 <p><%= @event.description %></p>
 <div class="span-10">
   <h3>Who&rsquo;s coming?</h3>

@@ -1,5 +1,20 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      time: "%l:%M %p"
+      full_date: "%A, %d. %B %Y"
+      with_name: "%A, %d. %B %Y"
+      long: "%B %d, %Y %H:%M"
+      long_dayname: "%A, %B %e, %Y, %l:%M %p"
+      month: "%B"
+      day: "%d"
+    am: "AM"
+    pm: "PM"
+  date:
+    formats:
+        full_date: "%A, %d. %B %Y"
+        with_name: "%A, %d. %B %Y"
+        long: "%B %d, %Y"
+        long_dayname: "%e. %B %Y"
+        day_name: "%A"
+        month_name: "%B"

@@ -2,11 +2,11 @@
   <% for event in @events %>
     <li>
       <acronym class="published">
-      <span class="pub-month"><%= event.starts_at.strftime('%B') %></span>
-      <span class="pub-date"><%= event.starts_at.strftime('%d') %></span>
+      <span class="pub-month"><%= localize( event.starts_at, :format => :month )%></span>
+      <span class="pub-date"><%= localize( event.starts_at, :format => :day ) %></span>
       </acronym>
       <span class="venue">
-      <%= link_to event.place, event %> (<%= event.city.name %>) at <%= event.starts_at.strftime('%I:%M%p')%></span><br />
+      <%= link_to event.place, event %> (<%= event.city.name %>) at <%= localize( event.starts_at, :format => :time ) %></span><br />
       <% if event.attendees.any? %>
         <% for attendent in event.attendees %>
           <span class="attendees">
