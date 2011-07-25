@@ -10,7 +10,7 @@ class EventsTest < ActiveSupport::TestCase
   end
 
   test 'can save event with start time and date in two fields' do
-    e = Event.new( :description => 'Hacking at The Dome', :starts_at_date => Time.zone.now.next_week.strftime('%d.%m.%Y'), :starts_at_time => Time.zone.now.strftime('%H:%M'), :city_name => 'Kuala Lumpur' )
+    e = Event.new( :description => 'Hacking at Starbucks', :starts_at_date => Time.zone.now.next_week.strftime('%d.%m.%Y'), :starts_at_time => Time.zone.now.strftime('%H:%M'), :city_name => 'Kuala Lumpur', :place => 'Starbucks, Pavillion' )
     e.creator = @espen
     e.save
     assert e.save
@@ -24,9 +24,23 @@ class EventsTest < ActiveSupport::TestCase
   end
 
   test 'should not save without creator' do
-    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week.beginning_of_day + 13.hours, :city_name => 'Kuala Lumpur' )
+    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week.beginning_of_day + 13.hours, :city_name => 'Kuala Lumpur', :place => 'A place' )
     assert !e.save
     assert e.errors['user_id'].any?
+  end
+
+  test 'should not save without city' do
+    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week.beginning_of_day + 13.hours)
+    e.creator = @espen
+    assert !e.save
+    assert e.errors['city_id'].any?
+  end
+
+  test 'should not save without place' do
+    e = Event.new( :description => 'Hacking at The Dome', :starts_at => Time.zone.now.next_week.beginning_of_day + 13.hours, :city_name => 'Kuala Lumpur' )
+    e.creator = @espen
+    assert !e.save
+    assert e.errors['place'].any?
   end
 
 
