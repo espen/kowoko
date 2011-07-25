@@ -2,7 +2,11 @@ class CitiesController < ApplicationController
   respond_to :html, :xml, :json
   
   def index
-    @cities = City.limit(20)
+    if params[:name]
+      @cities = City.where('name LIKE ?', params[:name] + '%' )
+    else
+      @cities = City.limit(20)
+    end
     respond_with @cities
   end
   

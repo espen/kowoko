@@ -1,8 +1,8 @@
-<%= form_for :events, :method => :get do |f| %>
-<p class="tagline">Find me a co-working session at <%= f.text_field :city %></p>
+<%= form_tag(cities_path, :method => 'get') do  %>
+<p class="tagline">Find me a co-working session at <%= text_field_tag 'name' %></p>
 <span class="inline">
   <span class="buttonblock">
-	<%= f.submit 'Search', { :class => 'button' } %>
+	<%= submit_tag 'Search', { :class => 'button' } %>
   </span>
 </span>
 <%= link_to "See all available co-working sessions", events_path %>
