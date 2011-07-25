@@ -4,8 +4,8 @@
       <acronym class="published">
       <span class="pub-month"><%= event.starts_at.strftime('%B') %></span>
       <span class="pub-date"><%= event.starts_at.strftime('%d') %></span>
-    </acronym>
-    <span class="venue">
+      </acronym>
+      <span class="venue">
       <%= link_to event.place, event %> (<%= event.city.name %>) at <%= event.starts_at.strftime('%I:%M%p')%></span><br />
       <% if event.attendees.any? %>
         <% for attendent in event.attendees %>
@@ -14,6 +14,7 @@
     	  </span>
         <% end %>
       <% end %>
-			<%= link_to "View", event, { :class => "button2" } %> 			
+	 <%= link_to "View", event, { :class => "button2" } %>
+	</li>
   <% end %>
 </ul>
