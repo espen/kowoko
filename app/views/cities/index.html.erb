@@ -1,0 +1,9 @@
+<ul id="citites">
+  <% for city in @cities %>
+    <li>
+      <span class="city">
+      <%= link_to city.name, city %></span><br />
+	 <%= link_to "View", city, { :class => "button2" } %>
+	</li>
+  <% end %>
+</ul>

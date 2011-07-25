@@ -1,0 +1,21 @@
+<h2><%= @city.name %></h2>
+<ul id="events">
+  <% for event in @events %>
+    <li>
+      <acronym class="published">
+      <span class="pub-month"><%= localize( event.starts_at, :format => :month )%></span>
+      <span class="pub-date"><%= localize( event.starts_at, :format => :day ) %></span>
+      </acronym>
+      <span class="venue">
+      <%= link_to event.place, event %> (<%= event.city.name %>) at <%= localize( event.starts_at, :format => :time ) %></span><br />
+      <% if event.attendees.any? %>
+        <% for attendent in event.attendees %>
+          <span class="attendees">
+    		<%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger", { :height => "32"} %>
+    	  </span>
+        <% end %>
+      <% end %>
+	 <%= link_to "View", event, { :class => "button2" } %>
+	</li>
+  <% end %>
+</ul>
