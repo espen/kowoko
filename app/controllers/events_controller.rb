@@ -22,7 +22,6 @@ class EventsController < ApplicationController
     @event = Event.create( params[:event])
     @event.creator = @current_user
     @event.save
-    logger.info @event.errors.inspect
     respond_with @event
   end
   
