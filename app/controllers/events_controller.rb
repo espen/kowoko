@@ -21,8 +21,10 @@ class EventsController < ApplicationController
   def new
     @event = Event.new()
     @city = City.find_by_slug( params[:city_id] )
-    @event.city = @city
-    @event.city_name = @city.name
+    if @city
+      @event.city = @city
+      @event.city_name = @city.name
+    end
     respond_with @event
   end
 

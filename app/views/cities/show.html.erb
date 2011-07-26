@@ -30,11 +30,7 @@ No events here.
   <div class="container">
     <h2>Organizing your own session?</h2>
     <span class="buttonblock">
-    <% if @current_user %>
-      <%= link_to "Start a co-working session", new_event_path, { :class => 'button' } %>
-    <% else %>
-      <%= link_to "Start a co-working session", new_event_path, { :class => 'twitter' } %>
-    <% end %>
+    <%= link_to "Start a co-working session", new_city_event_path(@city), { :class => ( @current_user ? 'button' : 'twitter' ) } %>
     </span>
   </div>
 </div>
