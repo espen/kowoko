@@ -14,8 +14,8 @@
 </p>
 <p>
 <%= f.label :starts_at %>
-<%= f.text_field :starts_at_time, {:value => Time.zone.now.strftime('10:30') } %>
-<%= f.text_field :starts_at_date, {:value => Time.zone.now.tomorrow.strftime('%d.%m.%Y') } %>
+<%= f.text_field :starts_at_time, {:value => localize( Time.zone.now, :format => :time) } %>
+<%= f.text_field :starts_at_date, {:value => localize( Time.zone.now.tomorrow, :format => :short_date) } %>
 <div id="datepicker"></div>
 </p>
 <p>
@@ -51,17 +51,16 @@ $(function() {
 		},
 		minLength: 2,
 		select: function( event, ui ) {
-			console.log( ui.item );
 		}
 	});
 	
 	$('#datepicker').datepicker( {
 		altField: "#event_starts_at_date",
-		altFormat: "DD, d MM, yy",
+		altFormat: "M d",
 		showOtherMonths: true,
 		selectOtherMonths: true,
 		minDate: 0
 	});
-	$("#event_starts_at_time").timePicker();
+	$("#event_starts_at_time").timePicker( { show24Hours: false } );
 });
 </script>
