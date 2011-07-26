@@ -10,8 +10,9 @@
 </p>
 <p>
 <%= f.label :starts_at %>
-<%= f.text_field :starts_at_time, {:value => Time.zone.now.strftime('%H:%M') } %>
+<%= f.text_field :starts_at_time, {:value => Time.zone.now.strftime('10:30') } %>
 <%= f.text_field :starts_at_date, {:value => Time.zone.now.tomorrow.strftime('%d.%m.%Y') } %>
+<div id="datepicker"></div>
 </p>
 <p>
 <%= f.label :description %>
@@ -25,3 +26,35 @@
 </span>
 </p>
 <% end %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/flick/jquery-ui.css"></link>
+<%= javascript_include_tag 'jquery.timePicker.min' %>
+<%= stylesheet_link_tag 'timePicker' %>
+
+<script>
+$(function() {
+	$( "#event_city_name" ).autocomplete({
+		source: function( request, response ) {
+			$.getJSON( "/cities.json", {
+				name: request.term
+			}, 	function(result) {
+				response($.map(result, function(item) {
+					return item.city.name
+				}) );
+			} );
+		},
+		minLength: 2,
+		select: function( event, ui ) {
+			console.log( ui.item );
+		}
+	});
+	
+	$('#datepicker').datepicker( {
+		altField: "#event_starts_at_date",
+		altFormat: "DD, d MM, yy"
+	});
+	$("#event_starts_at_time").timePicker();
+});
+</script>
