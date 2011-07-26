@@ -13,6 +13,12 @@ class Event < ActiveRecord::Base
   before_validation :set_starts_at, :set_city
   after_create :set_creator_to_attend
   
+  
+  def to_param
+    "#{self.id}-#{self.place.parameterize}-#{self.starts_at.to_date.to_s(:db)}"
+  end
+  
+  
   def duration=(val)
     self.ends_at = self.starts_at + '#{val}'.to_i.hours
   end

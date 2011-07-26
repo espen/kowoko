@@ -6,7 +6,7 @@
       <span class="pub-date"><%= localize( event.starts_at, :format => :day ) %></span>
       </acronym>
       <span class="venue">
-      <%= link_to event.place, event %> (<%= event.city.name %>) at <%= localize( event.starts_at, :format => :time ) %></span><br />
+      <%= link_to event.place, city_event_path(event.city, event) %> (<%= event.city.name %>) at <%= localize( event.starts_at, :format => :time ) %></span><br />
       <% if event.attendees.any? %>
         <% for attendent in event.attendees %>
           <span class="attendees">
