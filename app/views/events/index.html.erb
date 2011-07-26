@@ -18,3 +18,14 @@
 	</li>
   <% end %>
 </ul>
+
+</div>
+</div>
+<div id="secondary">
+  <div class="container">
+    <h2>Organizing your own session?</h2>
+    <span class="buttonblock">
+	<%= link_to "Start a co-working session", new_event_path(), { :class => ( @current_user ? 'button' : 'twitter' ) } %>
+    </span>
+  </div>
+</div>
