@@ -1,4 +1,5 @@
 <h2><%= @city.name %></h2>
+<% if @events.any? %>
 <ul id="events">
   <% for event in @events %>
     <li>
@@ -19,3 +20,21 @@
 	</li>
   <% end %>
 </ul>
+<% else %>
+No events here.
+<% end %>
+</div>
+</div>
+
+<div id="secondary">
+  <div class="container">
+    <h2>Organizing your own session?</h2>
+    <span class="buttonblock">
+    <% if @current_user %>
+      <%= link_to "Start a co-working session", new_event_path, { :class => 'button' } %>
+    <% else %>
+      <%= link_to "Start a co-working session", new_event_path, { :class => 'twitter' } %>
+    <% end %>
+    </span>
+  </div>
+</div>

@@ -4,7 +4,12 @@ class EventsController < ApplicationController
   before_filter :login_required, :only => [:new, :create, :destroy]
   
   def index
-    @events = Event.limit(20)
+    if params[:city_id]
+      @city = City.find_by_slug( params[:city_id] )
+      @events = @city.events.limit(20)
+    else
+      @events = Event.limit(20)
+    end
     respond_with @events
   end
   
@@ -15,6 +20,9 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new()
+    @city = City.find_by_slug( params[:city_id] )
+    @event.city = @city
+    @event.city_name = @city.name
     respond_with @event
   end
 
