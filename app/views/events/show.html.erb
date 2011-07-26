@@ -3,11 +3,11 @@
 <div class="span-10">
   <h3>Who&rsquo;s coming?</h3>
   <% if @event.attendees.any? %>
-    <% for attendent in @event.attendees %>
-      <span class="attendees">
-		    <%= link_to image_tag("http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger"), "http://twitter.com/#{attendent.nickname}", { :title => attendent.name } %>
-	    </span>
+  <span class="attendees">
+    <% for attendent in @event.attendees.limit(20) %>
+	<%= link_to image_tag("http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger"), "http://twitter.com/#{attendent.nickname}", { :title => attendent.name } %>
     <% end %>
+	</span>
   <% end %>
 </div>
 <div class="span-6">
