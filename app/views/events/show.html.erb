@@ -1,23 +1,26 @@
-<h2><%= localize( @event.starts_at, :format => :long_dayname ) %></h2>
-<p><%= @event.description %></p>
+<h2><%= @event.place %> (<%= @event.city.name %>), <%= localize( @event.starts_at, :format => :short_dayname ) %></h2>
+<p class="description"><%= @event.description %></p>
 <div class="span-10">
   <h3>Who&rsquo;s coming?</h3>
   <% if @event.attendees.any? %>
     <% for attendent in @event.attendees %>
       <span class="attendees">
-		<%= image_tag "http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger" %>
-		<br>
-		<%= attendent.name %>
-	  </span>
+		    <%= link_to image_tag("http://api.twitter.com/1/users/profile_image/#{attendent.nickname}.json?size=bigger"), "http://twitter.com/#{attendent.nickname}", { :title => attendent.name } %>
+	    </span>
     <% end %>
   <% end %>
 </div>
 <div class="span-6">
-	<% if @current_user && @event.user_id == @current_user.id %>
-		<%= link_to "Your event!", event_attend_path( @event ), :class=>"button2 big"%>
-	<% elsif @current_user && @event.attendees.any? && @event.attendees.find_by_user_id(@current_user.id) %>
-		<%= link_to "You're going", event_attend_path( @event ), :class=>"button2 big"%>
-	<% else %>
-		<%= link_to "Join!", event_attend_path( @event ), :class=>"button2 big"%>
-	<% end %>
+  <% if @current_user %>
+  	<% if @current_user && @event.user_id == @current_user.id %>
+  		<%= link_to "Your event!", event_attend_path( @event ), :class=>"button2 big"%>
+  	<% elsif @current_user && @event.attendees.any? && @event.attendees.find_by_user_id(@current_user.id) %>
+  		<%= link_to "You're going", event_attend_path( @event ), :class=>"button2 big"%>
+  	<% else %>
+  		<%= link_to "Join!", event_attend_path( @event ), :class=>"button2 big"%>
+  	<% end %>
+  <% else %>
+    <p>To attend, sign in with Twitter:</p>
+    <p><%= link_to "Join!", event_attend_path( @event ), { :class => 'twitter' } %></p>
+  <% end %>
 </div>
