@@ -3,6 +3,12 @@
 	http://localhost:3000/stylesheets/style.css?1311506480
 	http://localhost:3000/stylesheets/style.css?1311671595
 	http://localhost:3000/stylesheets/style.css?1311672332
+	http://localhost:3000/stylesheets/style.css?1311673730
+	http://localhost:3000/stylesheets/style.css?1311675227
+	http://localhost:3000/stylesheets/style.css?1311695450
+	http://localhost:3000/stylesheets/style.css?1311696203
+	http://localhost:3000/stylesheets/style.css?1311696921
+	http://localhost:3000/stylesheets/style.css?1311697131
 */
 
 body {
@@ -190,20 +196,6 @@ span.attendees img {
 	height: 73px;
 }
 
-span.attendees {
-	padding: 0;
-}
-
-span.attendees span{
-	background: #000;
-	display: block;  
-	width: 100px;
-	height: 100px;
-	color: #fff;
-	padding: 2px;
-	text-align: center;
-}
-
 a.button2 {
 	float: right;
 	display: inline-block;
@@ -263,42 +255,82 @@ a.button2 {
 }
 
 #wrapper .container form#new_event p label {
-	width: 150px;
+	width: 120px; 
 	float: left;
+	text-align: right;
+	margin-right: 20px;
 	font-size: 22px;
 	color: #666;
 	margin-top: 10px;
 }
 
-#wrapper .container form#new_event p input {
-	width: 300px;
+form#new_event p input#event_city_name, form#new_event p input#event_place, form#new_event p input#event_starts_at_time, form#new_event p input#event_starts_at_date {
+	width: 250px;
 	height: 30px;
 	margin: 0;
-	font-size: 25px;
-	padding: 5px 0;
-	border: 1px solid #666;
+	font-size: 22px;
+	padding: 5px;
+	border: 1px solid #ccc;
 	color: #666;
+}
+
+form#new_event p input#event_starts_at_time, form#new_event p input#event_starts_at_date {
+	width: 112px;
+	margin-right: 10px;
+}
+
+form#new_event #datepicker {
+	margin-left: 140px;
+}
+
+form#new_event #datepicker .ui-datepicker-inline {
+	width: 255px;
+}
+
+form#new_event #datepicker .ui-state-highlight {
+	background: #557BAD;
+	color: #fff;
+}
+
+form#new_event #datepicker span, form#new_event #datepicker a{
+	text-align: center;
+}
+
+.time-picker {
+	width: 122px !important;
+}
+
+.time-picker li {
+	font-size: 16px !important;
+	padding-bottom: 8px !important; 
 }
 
 #wrapper .container form#new_event p textarea {
 	height: 70px;
-	font-size: 25px;
+	font-size: 22px;
 	margin: 0;
+	width: 430px;
+	border: 1px solid #ccc;
 }
 
 #wrapper .container form#new_event span.inline {
 	float: left;
-	margin-left: 150px;
+	margin-left: 138px;
 }
 
 #wrapper .container form#new_event p input.button {
 	width: 148px;
-	border:none;
-	font: 19px arial,sans-serif;
-	margin: 0;
-	outline: 0;
-	border: 0;
-	margin-top: -5px;
+	font-size: 22px;
+	height: 50px;
+}
+
+#wrapper .container h2.event {
+	margin-bottom: -0;
+}
+
+#wrapper .container p.event {
+	margin-left: 3px;
+	color: #999;
 }
 
 #wrapper .container h3 {
@@ -315,4 +347,6 @@ a.button2.big {
 	width: 250px;
 	height: 44px;
 }
+
+
 
