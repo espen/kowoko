@@ -1,4 +1,4 @@
-<h2><%= @event.place %> (<%= @event.city.name %>), <%= localize( @event.starts_at, :format => :short_dayname ) %></h2>
+<h2><%= @event.place %> (<%= link_to @event.city.name, city_path( @event.city) %>), <%= localize( @event.starts_at, :format => :short_dayname ) %></h2>
 <p class="description"><%= @event.description %></p>
 <div class="span-10">
   <h3>Who&rsquo;s coming?</h3>
