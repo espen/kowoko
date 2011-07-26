@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
   
   def set_current_person
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= (User.find(session[:user_id]) if session[:user_id] ) || (User.find( *cookies.signed[:remember_me] ) if cookies.signed[:remember_me] )
   end
   
   def login_required
