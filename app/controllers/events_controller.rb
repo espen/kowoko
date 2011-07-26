@@ -8,7 +8,7 @@ class EventsController < ApplicationController
       @city = City.find_by_slug( params[:city_id] )
       @events = @city.events.limit(20)
     else
-      @events = Event.limit(20)
+      @events = Event.order('created_at desc').limit(20)
     end
     respond_with @events
   end
