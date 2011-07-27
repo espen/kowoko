@@ -62,6 +62,9 @@ $(function() {
 		selectOtherMonths: true,
 		minDate: 0
 	});
+	$('#event_starts_at_date').change( function() {
+		$('#datepicker').datepicker('setDate', $(this).val() );
+	});
 	$("#event_starts_at_time").timePicker( { show24Hours: false } );
 });
 </script>
