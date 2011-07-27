@@ -53,10 +53,11 @@ $(function() {
 		select: function( event, ui ) {
 		}
 	});
-	
 	$('#datepicker').datepicker( {
 		altField: "#event_starts_at_date",
 		altFormat: "M d",
+		dateFormat: "M d",
+		defaultDate: $('#event_starts_at_date').val(),
 		showOtherMonths: true,
 		selectOtherMonths: true,
 		minDate: 0

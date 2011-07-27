@@ -3,7 +3,7 @@ en:
     formats:
       time: "%l:%M %p"
       full_date: "%A, %d. %B %Y"
-      short_date: "%a %d"
+      short_date: "%b %d"
       long: "%B %d, %Y %H:%M"
       long_dayname: "%A, %B %e, %Y, %l:%M %p"
       short_dayname: "%B %e @ %l:%M %p"
