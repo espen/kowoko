@@ -296,6 +296,10 @@ form#new_event #datepicker span, form#new_event #datepicker a{
 	text-align: center;
 }
 
+.ui-autocomplete .ui-menu-item {
+    text-align: left;
+}
+
 .time-picker {
 	width: 122px !important;
 }
